@@ -6,7 +6,7 @@ public class Principal {
 
 	private static Scanner s;
 
-	public static void main(String[] args) {
+	public static ItemDeCompra main(String[] args) {
 		ArrayList<ItemDeCompra> itens = new ArrayList<ItemDeCompra>();
 		s = new Scanner(System.in);
 		int op = -1;
@@ -20,10 +20,10 @@ public class Principal {
 		}
 		
 		
-	private static void listarItens(ArrayList<ItemDeCompra> itens){
+	private static void listarItens(ArrayList<ItemDeCompra> itens1){
 		int i = 0;
 			
-		for (ItemDeCompra item : itens) {
+		for (ItemDeCompra item : itens1) {
 			System.out.println(i+": "+item );
 			i++;
 			}
@@ -38,6 +38,7 @@ public class Principal {
 			System.out.println("Quantidade:");
 			int quantidade = s.nextInt();
 			s.nextLine();
+			String descricao;
 			ItemDeCompra i = new ItemDeCompra(descricao, preco, quantidade);
 			return i;
 			
