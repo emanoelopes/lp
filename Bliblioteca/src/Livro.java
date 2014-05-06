@@ -4,6 +4,8 @@ public class Livro {
 		private String titulo;
 		private String autor;
 		
+		
+		
 		//Método construtor
 		public Livro(Integer codigo, String titulo, String autor) {
 			this.codigo = codigo;
@@ -14,6 +16,7 @@ public class Livro {
 		public Integer getCodigo() {
 			return codigo;
 		}
+		
 		public void setCodigo(Integer codigo) {
 			this.codigo = codigo;
 		}
