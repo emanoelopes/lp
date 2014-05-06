@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class Principal {
 
+
 	private static Scanner s;
 
-	public static ItemDeCompra main(String[] args) {
+	public static void main(String[] args) {
 		ArrayList<ItemDeCompra> itens = new ArrayList<ItemDeCompra>();
 		s = new Scanner(System.in);
 		int op = -1;
@@ -46,4 +47,3 @@ public class Principal {
 	}
 
 }
-
