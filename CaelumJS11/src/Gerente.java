@@ -16,4 +16,14 @@ public boolean autentica(int senha){
 		return false;
 	}
 }
+
+public void setNome(String string) {
+	// TODO Auto-generated method stub
+	
+}
+
+public void setSenha(int i) {
+	// TODO Auto-generated method stub
+	
+}
 }
