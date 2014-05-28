@@ -1,7 +1,6 @@
-package crud;
+package crud.telas;
 
 import java.awt.BorderLayout;
-import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,22 +12,33 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import crud.dao.IDAO;
+import crud.entidades.Contato;
+
 public class TelaLista extends JFrame implements ActionListener {
 
-	public TelaLista(){
+	private JTextArea ta1;
+	private IDAO dao;
+	private JTextField txt1;
+	public TelaLista(IDAO dao){
+		super("agenda");
+		
+		this.dao = dao;
 		super("Agenda");
 	}
 	
 	public void criaJanela(){
 		
-		JTextField txt1 = new JTextField(20);
+		tx1 = new JTextField(20);
 		JButton btPesquisa = new JButton("pesquisar");
 		
 		//Ligar o botão ao evento
 		btPesquisa.addActionListener(this);
 		
 		JButton btInsere = new JButton("inserir");
-		JTextArea ta1 = new JTextArea(10,50);
+		
+		ta1 = new JTextArea(10,50);
+		
 		
 		JPanel p1 = new JPanel();
 		JPanel p2 = new JPanel();
@@ -59,7 +69,19 @@ public class TelaLista extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {//esse método é chamado quando clicamos no botão.
-		// TODO Auto-generated method stub
+		//ler o valor do campo tx1
+		String texto = tx1.getText();
+		//converter para inteiro
+		Integer id = Integer.parseInt(texto);
+		//pesquisar o contato
+		Contato c = dao.consultarPeloId(id);
+		//se localizar, exibir dados na ta1
+		if(c!=null){
 		JOptionPane.showMessageDialog(null, "Clicou!");
+		ta1.append("id: "+c.getId()+"\n");
+		ta1.append("nome: "+c.getNome());
+		
+	}else{
+		JOptionPane.showMessageDialog(this, "");
 	}
 }
