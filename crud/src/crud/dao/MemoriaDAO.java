@@ -4,17 +4,15 @@ import java.util.ArrayList;
 
 import crud.entidades.Contato;
 
-
 public class MemoriaDAO implements IDAO{
-
-	private static ArrayList<Contato>;
-	contatos = new ArrayList<Contato>();
+    private ArrayList<Contato> contatos = new ArrayList<Contato>();
+    
 	@Override
 	public void salvar(Contato c) {
-		if(consultarPeloId(c.getId())!=null);
-			throw new RuntimeException("contato");
-		contatos.add(c);
-		
+		if(consultarPeloId(c.getId())!=null){
+			throw new RuntimeException("contato ja existe");
+		}
+		contatos.add(c);		
 	}
 
 	@Override
@@ -31,19 +29,12 @@ public class MemoriaDAO implements IDAO{
 
 	@Override
 	public Contato consultarPeloId(Integer id) {
-		for(Contato contato : contatos){
+		for (Contato contato : contatos) {
 			if(contato.getId().equals(id)){
 				return contato;
 			}
 		}
-		
 		return null;
-	}
-
-	@Override
-	public void salvar(Contato c) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

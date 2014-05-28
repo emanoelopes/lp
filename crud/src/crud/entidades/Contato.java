@@ -1,14 +1,11 @@
 package crud.entidades;
 
 public class Contato {
-
-	private Integer id;
-	private String nome;
-	
-	
-	
+     private Integer id;
+     private String nome;
+     
 	public Contato(Integer id, String nome) {
-		if(id == null){
+		if(id==null){
 			throw new RuntimeException("id nulo");
 		}
 		this.id = id;
@@ -26,4 +23,5 @@ public class Contato {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+     
 }
