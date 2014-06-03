@@ -8,8 +8,8 @@ public class Principal {
 
 	public static void main(String[] args) {
 		IDAO dao = new MemoriaDAO();
-		dao.salvar(new Contato(1, "ANA"));
-		dao.salvar(new Contato(2, "JOANA"));
+		dao.salvar(new Contato(1, "TERESA"));
+		dao.salvar(new Contato(2, "LOUISE"));
 		TelaLista telaLista = new TelaLista(dao);
 		telaLista.criaJanela();
 
