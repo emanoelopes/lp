@@ -22,6 +22,12 @@ class TwoDShape {
 		width = height = x;
 	}
 	
+	//Constrói um objeto a partir de outro.
+	TwoDShape(TwoDShape ob){
+		width = ob.width;
+		height = ob.height;
+	}
+	
 	//Métodos acessadores para width e height
 	double getWidth() {return width;}
 	void setWidth(double w) {this.width = w;}
@@ -58,6 +64,11 @@ class Triangle extends TwoDShape{
 		style = "filled";
 	}
 	
+	//Constrói um objeto a partir de outro.
+	Triangle(Triangle ob){
+		super(ob);//Passa o objeto para o construtor de TwoDShape
+		style = ob.style;
+	}
 	double area(){
 		return getWidth() * getHeight() / 2;
 	}
@@ -84,16 +95,16 @@ class ColorTriangle extends Triangle{
 	}
 }
 
-class Shapes6{
+class Shapes7{
 	public static void main(String[] args) {
-		ColorTriangle t1 = new ColorTriangle("Blue", "outlined", 8.0, 12.0);
-		ColorTriangle t2 = new ColorTriangle("Red","filled",2.0,2.0 );
+		Triangle t1 = new Triangle("outlined", 8.0, 12.0);
 	
+		//faz uma cópia de t1
+		Triangle t2 = new Triangle(t1);
 		
 		System.out.println("Info for t1: ");
 		t1.showStyle();
 		t1.showDim();
-		t1.showColor();
 		System.out.println("Area is "+ t1.area());
 		
 		System.out.println();
@@ -101,7 +112,6 @@ class Shapes6{
 		System.out.println("Info for t2: ");
 		t2.showStyle();
 		t2.showDim();
-		t2.showColor();
 		System.out.println("Area is "+ t2.area());
 		
 		
