@@ -44,7 +44,7 @@ class Triangle extends TwoDShape{
 		style = "none";
 	}
 	
-	//Construtor
+	//Construtor parametrizado.
 	Triangle(String s, double w, double h){
 		super(w, h);//Chama o construtor parametrizado da superclasse.
 
@@ -67,18 +67,33 @@ class Triangle extends TwoDShape{
 	}
 }
 
+//Estende Triangle
+class ColorTriangle extends Triangle{
+	private String color;
+	
+	ColorTriangle(String c, String s, double w, double h){
+		super(s, w, h);
+	
+		color = c;
+	}
+	
+	String getColor() {return color;}
+	
+	void showColor() {
+		System.out.println("Color is "+color);
+	}
+}
 
-class Shapes5{
+class Shapes6{
 	public static void main(String[] args) {
-		Triangle t1 = new Triangle();
-		Triangle t2 = new Triangle("oulined", 8.0, 12.0);
-		Triangle t3 = new Triangle(4.0);
-		
-		t1 = t2;
+		ColorTriangle t1 = new ColorTriangle("Blue", "outlined", 8.0, 12.0);
+		ColorTriangle t2 = new ColorTriangle("Red","filled",2.0,2.0 );
+	
 		
 		System.out.println("Info for t1: ");
 		t1.showStyle();
 		t1.showDim();
+		t1.showColor();
 		System.out.println("Area is "+ t1.area());
 		
 		System.out.println();
@@ -86,17 +101,10 @@ class Shapes5{
 		System.out.println("Info for t2: ");
 		t2.showStyle();
 		t2.showDim();
+		t2.showColor();
 		System.out.println("Area is "+ t2.area());
 		
-		System.out.println();
 		
-		System.out.println("Info for t3: ");
-		t3.showStyle();
-		t3.showDim();
-		System.out.println("Area is "+t3.area());
-		
-		System.out.println();
-	
 		
 	}
 }
