@@ -1,5 +1,5 @@
 
-public class Pessoa {
+public interface Pessoa {
 
 		private String matricula;
 		private String nome;

@@ -19,4 +19,6 @@ public class Principal {
 	public static void mostra(Pessoa pessoa){
 		System.out.println(pessoa.exibir());
 	}
+	
+	AlunoEAD ead = new AlunoEAD();
 }
