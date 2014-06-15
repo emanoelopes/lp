@@ -1,8 +1,16 @@
 package crud.entidades;
 
+<<<<<<< HEAD
 public class Contato {
      private Integer id;
      private String nome;
+=======
+import java.io.Serializable;
+
+public class Contato implements Serializable{
+	private Integer id;
+    private String nome;
+>>>>>>> refs/heads/iss01
      
 	public Contato(Integer id, String nome) {
 		if(id==null){

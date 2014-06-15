@@ -21,6 +21,7 @@ public class TelaLista extends JFrame implements ActionListener {
 	private JTextArea ta1;
 	private TelaInserir telaInserir;
 	private TelaAlterar telaAlterar;
+<<<<<<< HEAD
 
 	public TelaLista(IDAO dao) {
 		super("agenda");
@@ -67,6 +68,79 @@ public class TelaLista extends JFrame implements ActionListener {
 		p2.add(ta1);
 		p3.add(btInsere);
 		p3.add(btAltera);
+=======
+	private JButton btPesquisa;
+
+	public TelaLista(IDAO dao) {
+		super("agenda");
+		this.dao = dao;
+	}
+
+	public void criaJanela() {
+		telaInserir = new TelaInserir(dao);
+		telaInserir.criaJanela();
+		telaAlterar = new TelaAlterar(dao);
+		telaAlterar.criaJanela();
+
+		tx1 = new JTextField(20);
+		btPesquisa = new JButton("pesquisar");
+		btPesquisa.addActionListener(this);
+		JButton btInsere = new JButton("inserir");
+		JButton btAltera = new JButton("alterar");
+		JButton btExclui = new JButton("excluir");
+
+		btExclui.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					if (ultimoContatoPesquisado != null) {
+						int ok = JOptionPane
+								.showConfirmDialog(null, "excluir contato "
+										+ ultimoContatoPesquisado.getId() + "?");
+						if (ok == JOptionPane.OK_OPTION) {
+							dao.excluir(ultimoContatoPesquisado);
+						}
+					}
+
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				}
+			}
+		});
+
+		btAltera.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if (ultimoContatoPesquisado != null) {
+					telaAlterar.setContato(ultimoContatoPesquisado);
+					telaAlterar.setVisible(true);
+				}
+			}
+		});
+		btInsere.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				telaInserir.setVisible(true);
+			}
+		});
+
+		ta1 = new JTextArea(10, 50);
+
+		JPanel p1 = new JPanel();
+
+		JPanel p2 = new JPanel();
+		JPanel p3 = new JPanel();
+		p1.add(tx1);
+		p1.add(btPesquisa);
+		p2.add(ta1);
+		p3.add(btInsere);
+		p3.add(btAltera);
+		p3.add(btExclui);
+		
+>>>>>>> refs/heads/iss01
 		getContentPane().add(p1, BorderLayout.NORTH);
 		getContentPane().add(p2, BorderLayout.CENTER);
 		getContentPane().add(p3, BorderLayout.SOUTH);
