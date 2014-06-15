@@ -2,7 +2,7 @@
 //Uma hierarquia de classe simples do livro Java para Iniciantes - Cap 7 Herança
 
 //Uma classe para objetos de duas dimensões.
-class TwoDShape {
+abstract class TwoDShape {
 	private double width;
 	private double height;
 	private String name;
@@ -45,10 +45,8 @@ class TwoDShape {
 		System.out.println("Width and hight are " +width + " and " + height);
 	}
 	
-	double area(){
-		System.out.println("area() must be overridden");
-		return 0.0;
-	}
+	//Agora area() é abstrato.
+	abstract double area();
 	
 }
 
@@ -120,14 +118,13 @@ class Rectangle extends TwoDShape{
 		return getWidth() * getHeight();
 }
 
-class DynShapes{
+class AbsShape{
 	public static void main(String args[]) {
-		TwoDShape shapes[] = new TwoDShape[5];
+		TwoDShape shapes[] = new TwoDShape[4];
 		shapes[0] = new Triangle("outlined", 8.0, 12.0);
 		shapes[1] = new Rectangle(10);
 		shapes[2] = new Rectangle(10, 4);
 		shapes[3] = new Triangle(7.0);
-		shapes[4] = new TwoDShape(10, 20, "generic");
 		
 		for (int i = 0; i < shapes.length; i++) {
 			System.out.println("Object is "+shapes[i].getName());
