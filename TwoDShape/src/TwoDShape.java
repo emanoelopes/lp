@@ -117,6 +117,20 @@ class Rectangle extends TwoDShape{
 	double area(){
 		return getWidth() * getHeight();
 }
+}
+
+//Subclasse de TwoDShape para círculos
+class Circle extends TwoDShape{
+
+	//Construtor com um argumento.
+Circle(double d){
+	super(d, "circle"); 
+}
+
+double area(){
+	return (getWidth()*getWidth())* 3.14;
+}
+}
 
 class AbsShape{
 	public static void main(String args[]) {
@@ -134,4 +148,4 @@ class AbsShape{
 	}
 		
 	}
-}
+
