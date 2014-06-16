@@ -19,7 +19,7 @@ public class Principal {
 			System.out.println("0 -> Selecionar");
 			op = s.nextInt();
 		}
-		
+	}
 		
 	private static void listarItens(ArrayList<ItemDeCompra> itens1){
 		int i = 0;
@@ -39,11 +39,11 @@ public class Principal {
 			System.out.println("Quantidade:");
 			int quantidade = s.nextInt();
 			s.nextLine();
-			String descricao;
+			String descricao = null;
 			ItemDeCompra i = new ItemDeCompra(descricao, preco, quantidade);
 			return i;
 			
 		}
-	}
+	
 
 }
