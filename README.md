@@ -1,7 +1,7 @@
 Linguagem de Programação
 ========================
 
-Este repositório é um complemento das aulas de Linguagem de Programação em Java, da disciplina de Linguagem de Programação ministrada por [Paulo Vilar]()
+Este repositório é um complemento das aulas de Linguagem de Programação em Java, da disciplina de Linguagem de Programação ministrada por [Paulo Vilar](https://github.com/paulolvilar)
 
 CRUD
 ----
